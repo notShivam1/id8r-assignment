@@ -10,7 +10,7 @@ function App() {
     <div style={{display:'flex', justifyContent:'center',alignItems:'center', height:'100vh'}}>
       <DynamicContextProvider
         settings={{
-          environmentId: "2762a57b-faa4-41ce-9f16-abff9300e2c9",
+          environmentId: "8ca79aaa-84d9-4f9d-99bf-1a790ce22f60",
           walletConnectors: [
             EthereumWalletConnectors,
           ],
@@ -23,3 +23,7 @@ function App() {
 }
 
 export default App;
+
+
+// links to check https://docs.dynamic.xyz/gating/nft-token-gating
+// https://docs.dynamic.xyz/react-sdk/hooks/usedynamiccontext
