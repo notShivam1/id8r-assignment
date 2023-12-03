@@ -1,21 +1,23 @@
-import {
-  DynamicContextProvider,
-} from "@dynamic-labs/sdk-react-core";
+import { DynamicContextProvider } from "@dynamic-labs/sdk-react-core";
 import { EthereumWalletConnectors } from "@dynamic-labs/ethereum";
-import './App.css';
 import Main from "./components/Main";
+import './App.css';
 
 function App() {
+  console.log(process.env.REACT_APP_DYNAMIC_KEY)
+  const dynamicKey = process.env.REACT_APP_DYNAMIC_KEY as string; // imported from .env
+
   return (
-    <div style={{display:'flex', justifyContent:'center',alignItems:'center', height:'100vh'}}>
+    <div className="container">
       <DynamicContextProvider
         settings={{
-          environmentId: "8ca79aaa-84d9-4f9d-99bf-1a790ce22f60",
+          environmentId: dynamicKey ,
           walletConnectors: [
             EthereumWalletConnectors,
           ],
         }}
       >
+         {/* Main component containing the main content of the app */}
         <Main />
       </DynamicContextProvider>
     </div>
@@ -23,7 +25,3 @@ function App() {
 }
 
 export default App;
-
-
-// links to check https://docs.dynamic.xyz/gating/nft-token-gating
-// https://docs.dynamic.xyz/react-sdk/hooks/usedynamiccontext
